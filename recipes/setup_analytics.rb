@@ -58,7 +58,8 @@ machine analytics_server_hostname do
   attributes lazy {{
     'delivery-cluster' => {
       'analytics' => {
-        'fqdn' => analytics_server_ip
+        'fqdn' => analytics_server_ip,
+        'integration' => is_splunk_enabled? ? 'true' : 'false'
       }
     }
   }}
